@@ -125,10 +125,6 @@ loop:
 		position += size + msgSetHeaderLen
 		nextOffset++
 
-		_, err = s.log.Seek(size, 1)
-		if err != nil {
-			break loop
-		}
 	}
 	if err == io.EOF {
 		s.NextOffset = nextOffset
